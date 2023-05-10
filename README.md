@@ -1,5 +1,4 @@
 # businessCardShare![profileedit](https://github.com/sudhanshuGt/businessCardShare/assets/64696216/10dbd8ae-1cc0-4159-8e29-a857460f725d)
-![scanned](https://github.com/sudhanshuGt/businessCardShare/assets/64696216/30d6c3d5-a6a1-4d6e-ac1b-e7caf0a576f5)
 ![scanner](https://github.com/sudhanshuGt/businessCardShare/assets/64696216/e18b6ed2-dd87-4cc9-93c4-275744964e09)
 ![contactlist](https://github.com/sudhanshuGt/businessCardShare/assets/64696216/e09ae34d-7e6a-4ab0-ab7d-2f8b44f63248)
 ![home](https://github.com/sudhanshuGt/businessCardShare/assets/64696216/1e78190e-4558-48e4-9aa5-86c39e9ef97b)

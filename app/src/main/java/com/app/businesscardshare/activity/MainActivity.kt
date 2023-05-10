@@ -16,6 +16,7 @@ import android.widget.Toast
 import com.app.businesscardshare.R
 import com.app.businesscardshare.auth.Login
 import com.app.businesscardshare.databinding.ActivityMainBinding
+import com.app.businesscardshare.util.Constants
 import com.bumptech.glide.Glide
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -32,6 +33,11 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding;
     private lateinit var githubProfileUrl : String
+    private lateinit var name : String
+    private lateinit var mail : String
+    private lateinit var phone: String
+    private lateinit var profileImageUrl: String
+    private lateinit var country : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +51,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun listener() {
+
+        binding.edit.setOnClickListener {
+            val intent = Intent(this, Edit::class.java)
+            intent.putExtra("name", name)
+            intent.putExtra("phone", phone)
+            intent.putExtra("mail", mail)
+            intent.putExtra("country", country)
+            intent.putExtra("profile", profileImageUrl)
+            intent.putExtra("git", githubProfileUrl)
+            startActivity(intent)
+        }
 
         binding.logOut.setOnClickListener {
             val sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE)
@@ -112,26 +129,27 @@ class MainActivity : AppCompatActivity() {
         }
 
         val ref = FirebaseDatabase.getInstance().getReference("user_profiles/$uid")
-        ref.addListenerForSingleValueEvent(object : ValueEventListener {
+        ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists()) {
                     // Profile data exists, get the data
-                    val name = dataSnapshot.child("name").value.toString()
-                    val email = dataSnapshot.child("email").value.toString()
-                    val phone = dataSnapshot.child("phone").value.toString()
+                    name = dataSnapshot.child("name").value.toString()
+                    mail = dataSnapshot.child("email").value.toString()
+                    phone = dataSnapshot.child("phone").value.toString()
                     githubProfileUrl = dataSnapshot.child("githubProfileUrl").value.toString()
-                    val country = dataSnapshot.child("country").value.toString()
-                    val profileImageUrl = dataSnapshot.child("profileImageUrl").value.toString()
-                    setUpData(name, email, phone, githubProfileUrl, country, profileImageUrl)
+                    country = dataSnapshot.child("country").value.toString()
+                    profileImageUrl = dataSnapshot.child("profileImageUrl").value.toString()
+                    setUpData(name, mail, phone, githubProfileUrl, country, profileImageUrl)
                 } else {
 
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
-
+                // Handle cancelled event
             }
         })
+
     }
 
     private fun setUpData(name: String, email: String, phone: String, githubProfileUrl: String, country: String, profileImageUrl: String) {
@@ -171,6 +189,10 @@ class MainActivity : AppCompatActivity() {
         toast.duration = Toast.LENGTH_LONG
         toast.view = layout
         toast.show()
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 
 }

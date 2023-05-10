@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.ScannedProfile">
+
+    <RelativeLayout
+        android:id="@+id/headerSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#052C54"
+        android:elevation="2dp"
+        android:padding="20dp">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/back"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/back">
+        </ImageView>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/profileDetailSection"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/headerSection"
+        android:gravity="center_horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/profile"
+                app:shapeAppearanceOverlay="@style/ImageShape"
+                android:scaleType="centerCrop"
+                android:id="@+id/userProfile">
+            </com.google.android.material.imageview.ShapeableImageView>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/edit_text_bg"
+            android:elevation="2dp"
+            android:layout_marginVertical="5dp"
+            android:backgroundTint="@color/white"
+            android:paddingVertical="10dp"
+
+            android:gravity="center_horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:paddingVertical="5dp"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/user"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/userIcon">
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="User name"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:layout_toRightOf="@id/userIcon"
+                    android:layout_marginLeft="10dp"
+                    android:maxLines="1"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="end"
+                    android:id="@+id/userName">
+                </TextView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:gravity="center_horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:paddingVertical="5dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/mail"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/userMail">
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Mail"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_toRightOf="@id/userMail"
+                    android:id="@+id/mail"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:maxLines="1"
+                    android:ellipsize="end">
+                </TextView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:paddingVertical="5dp"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/telephone"
+                    android:id="@+id/iconTelephone">
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="User name"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_toRightOf="@id/iconTelephone"
+                    android:id="@+id/phone"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:maxLines="1"
+                    android:ellipsize="end">
+                </TextView>
+
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="5dp">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="5dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/github"
+                        android:layout_centerVertical="true"
+                        android:tint="#052C54"
+                        tools:ignore="UseAppTint"
+                        android:id="@+id/iconGit">
+                    </ImageView>
+
+                    <TextView
+                        android:id="@+id/git"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/iconGit"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/jetbrains_mono_medium"
+                        android:maxLines="1"
+                        android:text="Git"
+                        android:textColor="#052C54"
+                        android:textSize="20dp"></TextView>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="5dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/planet"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/iconCountry">
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:text="Country"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/montserrat"
+                        android:layout_toRightOf="@id/iconCountry"
+                        android:id="@+id/country"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:maxLines="1"
+                        android:ellipsize="end">
+                    </TextView>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/saveContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="#052C54"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp">
+
+            <ProgressBar
+                android:id="@+id/saveContactProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                android:layout_centerHorizontal="true"
+                android:indeterminateTint="@color/white">
+            </ProgressBar>
+            <TextView
+                android:id="@+id/saveContactText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save as contact"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/montserrat_semibold">
+            </TextView>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

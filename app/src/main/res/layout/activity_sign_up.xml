@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBFCFC"
+    tools:context=".auth.SignUp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Sign up"
+            android:textColor="@color/black"
+            android:layout_marginBottom="20dp"
+            android:textSize="20dp">
+        </TextView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/edit_text_bg"
+            android:backgroundTint="@color/white"
+            android:padding="15dp"
+            android:layout_marginVertical="5dp"
+            android:elevation="2dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/mail"
+                android:layout_centerVertical="true"
+                android:id="@+id/mailIcon">
+            </ImageView>
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="#660000"
+                android:backgroundTint="@color/white"
+                android:ellipsize="end"
+                android:hint="Email"
+                android:inputType="text"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_toRightOf="@id/mailIcon"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/edit_text_bg"
+            android:backgroundTint="@color/white"
+            android:padding="15dp"
+            android:layout_marginVertical="10dp"
+            android:elevation="2dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/password"
+                android:layout_centerVertical="true"
+                android:id="@+id/passwordIcon">
+            </ImageView>
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="#660000"
+                android:backgroundTint="@color/white"
+                android:ellipsize="end"
+                android:hint="Password"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_toRightOf="@id/passwordIcon"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/edit_text_bg"
+            android:backgroundTint="@color/white"
+            android:padding="15dp"
+            android:layout_marginVertical="5dp"
+            android:elevation="2dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/password"
+                android:layout_centerVertical="true"
+                android:id="@+id/confirmPasswordIcon">
+            </ImageView>
+            <EditText
+                android:id="@+id/confirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="#660000"
+                android:backgroundTint="@color/white"
+                android:ellipsize="end"
+                android:hint="Confirm password"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_toRightOf="@id/confirmPasswordIcon"/>
+        </RelativeLayout>
+
+
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="#052C54"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp">
+
+            <ProgressBar
+                android:id="@+id/signUpProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                android:layout_centerHorizontal="true"
+                android:indeterminateTint="@color/white">
+            </ProgressBar>
+            <TextView
+                android:id="@+id/signUpWithEmailPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign Up"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/montserrat">
+            </TextView>
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

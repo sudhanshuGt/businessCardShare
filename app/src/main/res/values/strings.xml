@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BusinessCardShare</string>
+    <string name="signup">New here ? <b>Sign Up</b></string>
+</resources>
